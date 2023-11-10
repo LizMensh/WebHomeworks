@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en" class="h-100" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Questionate</title>
+    <link href="../static/css/bootstrap.css" rel="stylesheet">
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <div class="col-2">
+                <a class="a-none-decor" href="#">
+                    <h2 style="color:white">Questionate</h2>
+                </a>
+            </div>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-8 position-relative">
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <form class="d-flex" role="search">
+                                <input class="col-4 form-control me-2" type="search" placeholder="Search"
+                                       aria-label="Search">
+                                <div class="col-4 btn btn-success AskButton">Ask!</div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <div class="avatar">
+                                <img src="../static/img/Avatar1.png" alt=""/>
+                            </div>
+                        </li>
+                        <li class="nav-item ms-4">
+                            <div class="row">
+                                <h4 style="color: white">Zefir</h4>
+                                <div class="row" style="color: white">
+                                    <a class="col-6" href="#">Settings</a>
+                                    <a class="col-6" href="#">Log out</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="flex-shrink-0">
+    <div class="container_question">
+        <div class="row" style="margin-left: 40px; padding-top: 40px">
+            <div class="col-7">
+
+                <h1>Settings: Nickname</h1>
+                <h5 style="color:red; margin-top:20px;">Sorry, this nickname already taken! </h5>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Login</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                           aria-describedby="basic-addon1" style="margin-top:20px;">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">Email</span>
+                    <input type="text" class="form-control" placeholder="example@exmp.com" aria-label="example@exmp.com"
+                           aria-describedby="basic-addon2" style="margin-top:20px;">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">Nickname</span>
+                    <input type="text" class="form-control" placeholder="Example" aria-describedby="basic-addon3"
+                           style="margin-top:20px;">
+                </div>
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupFile01">Upload Avatar</label>
+                    <input type="file" class="form-control" id="inputGroupFile01" style="margin-top:20px;">
+                </div>
+                <div class="ContainerWhite">
+                    <div class="AvatarSquare">avatar</div>
+                    <button class="btn btn-outline-success SaveButton">Save all</button>
+                </div>
+
+            </div>
+            <div class="col-5" style="padding-right: 40px;">
+                <div class="container_tags">
+                    <h1>Popular tags</h1>
+                    <ul class="nav">
+                        <li class="nav-item popular-tag">
+                            <a class="nav-link active" aria-current="page" href="#">Tag</a>
+                        </li>
+                        <li class="nav-item popular-tag">
+                            <a class="nav-link active" aria-current="page" href="#">Tag</a>
+                        </li>
+                        <li class="nav-item popular-tag">
+                            <a class="nav-link active" aria-current="page" href="#">Tag</a>
+                        </li>
+                        <li class="nav-item popular-tag">
+                            <a class="nav-link active" aria-current="page" href="#">Tag</a>
+                        </li>
+                        <li class="nav-item popular-tag">
+                            <a class="nav-link active" aria-current="page" href="#">Tag</a>
+                        </li>
+                        <li class="nav-item popular-tag">
+                            <a class="nav-link active" aria-current="page" href="#">Tag</a>
+                        </li>
+                    </ul>
+                    <h1 style="margin-top:30px;">Best members</h1>
+                </div>
+                <ol class="list-group list-group-numbered" style="margin-right: 130px; margin-left: 80px;">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Murzik</div>
+                            Some information
+                        </div>
+                        <span class="badge bg-primary rounded-pill">344</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Persik</div>
+                            Some information
+                        </div>
+                        <span class="badge bg-primary rounded-pill">289</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Barsik</div>
+                            Some information
+                        </div>
+                        <span class="badge bg-primary rounded-pill">267</span>
+                    </li>
+                </ol>
+
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted"></span>
+    </div>
+</footer>
+
+</body>
+</html>
