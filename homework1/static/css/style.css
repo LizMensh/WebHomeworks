@@ -23,6 +23,8 @@
 .avatar_question {
   width: 100px;
   height:100px;
+  margin-bottom: 30px;
+  margin-right: 10px;
 }
 
 .popular-tag {
@@ -34,15 +36,15 @@
 .avatar_QuestionPage {
   width: 130px;
   height:130px;
+  margin-bottom: 30px;
+  margin-right: 10px;
 }
 
 .AskButton {
   font-size: 20px;
   color: black;
   background: #198754;
-  border-color: black;
-  border-width: 3px;
-  border-radius: 2px;
+  margin-left: 40px;
 }
 
 .AnswerButton {
@@ -83,6 +85,12 @@
   text-align:center;
   border: 2px solid gray;
   border-radius: 6px;
+}
+
+.hot_questions {
+    font-size: 23px;
+    line-height: 2.5;
+    margin-left:40px
 }
 
 .question_tag {
@@ -137,6 +145,8 @@ img {
   border-radius: 8px;
   border: 2px solid gray;
   overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 40px;
 }
 
 .profile {
@@ -164,9 +174,6 @@ img {
 }
 
 .LikeButton {
-    width="16";
-    height="16";
-     fill="currentColor";
-      class="bi bi-hand-thumbs-up";
-       viewBox="0 0 16 16";
+    display: flex;
+    justify-content: center;
 }
