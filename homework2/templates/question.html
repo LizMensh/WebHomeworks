@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="border-bottom border-3 border-secondary" style="padding-bottom: 20px">
+        <div class="row">
+            <div class="col-2">
+                <div class="avatar_question mx-auto">
+                    <a href="#">
+                        <img src="{% static 'img/Avatar3.png' %}" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="col-10">
+                <a class="question-title" href="{% url 'question' question_id=question.id %}">{{ question.title }}</a>
+                <div class="question-text">
+                    {{ question.text }}
+                </div>
+            </div>
+        </div>
+        <div class="row", style="padding-bottom: 10px">
+            <div class="text-center col-2", style="padding-top: 30px">
+                  <button type="button" class="btn btn-outline-danger btn-sm">
+                      <object class="LikeButton" type="image/svg+xml" data="{% static 'icons/thumbs-down.svg' %}">
+                      </object>
+                  </button>
+                    {{ question.like_number }}
+                  <button type="button" class="btn btn-outline-success btn-sm">
+                      <object class="LikeButton" type="image/svg+xml" data="{% static 'icons/thumbs-up.svg' %}">
+                      </object>
+                  </button>
+            </div>
+            <div class="col-10">
+                <div class="question_tag text-center">
+                    <ul class="nav">
+                            <h5 style="margin-top:10px;">Tags:</h5>
+                            {% for tag in question.tags %}
+                                <li class="nav-item">
+                                    <a class="nav-link" style=""
+                                       href="{% url 'tag_question' tag=tag %}">{{ tag }}</a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom border-3 border-secondary">
+        {% for answer in question.answers %}
+            {% include 'components/answer_item.html' %}
+        {% endfor %}
+    </div>
+    <div class="container" style="padding-top: 20px">
+        <textarea class="form-control" id="exampleFormControlTextarea2" rows="6"
+                  placeholder="Enter your answer here..."></textarea>
+        <button class="btn btn-outline-success" style="margin-top: 10px; margin-bottom: 10px">Ask!</button>
+    </div>
+{% endblock %}

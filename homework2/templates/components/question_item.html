@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="question" style="height: flex">
+        <div class="row">
+            <div class="col-2">
+                <div class="avatar_question mx-auto">
+                    <img src="{% static 'img/Avatar3.png' %}" alt=""/>
+                </div>
+            </div>
+            <div class="col-10">
+                <a class="question-title" href="{% url 'question' question_id=question.id %}">{{ question.title }}</a>
+                <div class="question-text">
+                    {{ question.text }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="text-center col-2" style="padding-top: 30px">
+                  <button type="button" class="btn btn-outline-danger btn-sm">
+                      <object class="LikeButton" type="image/svg+xml" data="{% static 'icons/thumbs-down.svg' %}">
+                      </object>
+                  </button>
+                    {{ question.like_number }}
+                  <button type="button" class="btn btn-outline-success btn-sm">
+                      <object class="LikeButton" type="image/svg+xml" data="{% static 'icons/thumbs-up.svg' %}">
+                      </object>
+                  </button>
+            </div>
+            <div class="col-5">
+                <div class="AnswerButton mx-auto">
+                    <a href="{% url 'question' question_id=question.id %}">answer({{ question.answers_number }})</a>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="question_tag text-center">
+                    <ul class="nav">
+                            <h5 style="margin-top:10px;">Tags:</h5>
+                            {% for tag in question.tags %}
+                                <li class="nav-item">
+                                    <a class="nav-link" style=""
+                                       href="{% url 'tag_question' tag=tag %}">{{ tag }}</a>
+                                </li>
+                            {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

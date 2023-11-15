@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="ContainerWhite" style="">
+        <h1 style="margin-right:10px;">Tag:</h1>
+        <h1>{{ tag }}</h1>
+    </div>
+    {% for question in page_obj.object_list%}
+        {% include 'components/question_item.html' %}
+    {% endfor %}
+    {% include 'components/paginator.html' %}
+{% endblock %}
