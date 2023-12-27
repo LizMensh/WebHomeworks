@@ -1,0 +1,31 @@
+{% extends "inc/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Settings: {{ options.nickname }}</h1>
+    <h5 style="color:red; margin-top:20px;">Sorry, this nickname allready taken! </h5>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Login</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+               aria-describedby="basic-addon1" style="margin-top:20px;" value="{{ options.username }}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Email</span>
+        <input type="text" class="form-control" placeholder="example@exmp.com" aria-label="example@exmp.com"
+               aria-describedby="basic-addon2" style="margin-top:20px;">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon3">Nickname</span>
+        <input type="text" class="form-control" placeholder="Example" aria-describedby="basic-addon3"
+               style="margin-top:20px;" value="{{ options.nickname }}">
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupFile01">Upload Avatar</label>
+        <input type="file" class="form-control" id="inputGroupFile01" style="margin-top:20px;">
+    </div>
+    <div class="ContainerWhite">
+        <div class="AvatarSquare">avatar</div>
+        <button class="btn btn-outline-success SaveButton">Save all</button>
+    </div>
+{% endblock %}

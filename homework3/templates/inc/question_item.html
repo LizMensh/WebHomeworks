@@ -1,0 +1,44 @@
+{% load static %}
+
+<div class="question">
+        <div class="row">
+            <div class="col-2">
+                <div class="avatar_question mx-auto">
+                    <img src="{% static "img/../../media/Avatar3.png" %}" alt=""/>
+                </div>
+            </div>
+            <div class="col-10">
+                <a class="question-title" href="{% url 'question' question_id=question.id %}">{{ question.title }}</a>
+                <div class="question-text">
+                    {{ question.text }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <div class="text-center position-relative top-50 start-50 translate-middle">
+                    <input type="checkbox" class="btn-check" id="{{ question.id }}" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="{{ question.id }}">{{ question.like_number }}</label>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="AnswerButton mx-auto">
+                    <a href="{% url 'question' question_id=question.id %}">answer({{ question.answers_count }})</a>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="question_tag text-center">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <h5 style="margin-top:10px;">Tags:</h5>
+                            {% for tag in question.tags %}
+                                <li class="nav-item popular-tag">
+                                    <a class="nav-link " href="{% url 'tag_question' tag_id=tag.id %}">{{ tag }}</a>
+                                </li>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,22 @@
+{% extends "inc/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <h1 style=" margin-bottom:30px;">New Question</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1"
+               placeholder="Example">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea2" class="form-label">Text</label>
+        <textarea class="form-control" id="exampleFormControlTextarea2" rows="6"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">Tags</label>
+        <input type="email" class="form-control" id="exampleFormControlInput3"
+               placeholder="Tag1, Tag2, Tag3">
+    </div>
+    <button class="btn btn-outline-success">Ask!</button>
+{% endblock %}
