@@ -1,0 +1,50 @@
+{% extends "inc/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <h1>Sign Up</h1>
+    <form action="/signup/" method="post">
+        {% if Invalid %}
+            <h5 style="color:red; margin-top:20px;">{{ Exception }}</h5>
+        {% endif %}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Login</span>
+            <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username"
+                   aria-describedby="basic-addon1" style="margin-top:20px;">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Nickname</span>
+            <input name="nickname" type="text" class="form-control" placeholder="Example" aria-describedby="basic-addon3"
+                   style="margin-top:20px;">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Email</span>
+            <input name="email" type="text" class="form-control" placeholder="example@exmp.com" aria-label="example@exmp.com"
+                   aria-describedby="basic-addon2" style="margin-top:20px;">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon4">Password</span>
+            <input name="password" type="text" class="form-control" placeholder="********" aria-describedby="basic-addon4"
+                   style="margin-top:20px;">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon5">Repeat password</span>
+            <input name="second_password" type="text" class="form-control" placeholder="********" aria-describedby="basic-addon5"
+                   style="margin-top:20px;">
+        </div>
+
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload Avatar</label>
+            <input name="avatar" type="file" class="form-control" id="inputGroupFile01" style="margin-top:20px;">
+        </div>
+        <div class="ContainerWhite">
+            <div class="AvatarSquare">avatar</div>
+            <button type="submit" class="btn btn-outline-success SaveButton">Register</button>
+        </div>
+    </form>
+{% endblock %}

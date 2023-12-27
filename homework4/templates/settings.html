@@ -1,0 +1,35 @@
+{% extends "inc/base.html" %}
+
+{% load static %}
+
+{% block content %}
+     <h1>Settings: {{ options.nickname }}</h1>
+    <form action="/settings/" method="post">
+        {% if Invalid %}
+            <h5 style="color:red; margin-top:20px;">{{ Exception }}</h5>
+        {% endif %}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Login</span>
+            <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username"
+                   aria-describedby="basic-addon1" style="margin-top:20px;" value="{{ current_user.profile.user.username }}">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Nickname</span>
+            <input name="nickname" type="text" class="form-control" placeholder="Example" aria-describedby="basic-addon3"
+                   style="margin-top:20px;" value="{{ current_user.profile.nickname }}">
+        </div>
+{#        <div class="input-group mb-3">#}
+{#            <span class="input-group-text" id="basic-addon2">Password</span>#}
+{#            <input name="password" type="password" class="form-control" placeholder="Password"#}
+{#                   aria-describedby="basic-addon2" style="margin-top:20px;" value="{{ current_user.profile.user.password }}">#}
+{#        </div>#}
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupFile01">Upload Avatar</label>
+            <input name="Avatar" type="file" class="form-control" id="inputGroupFile01" style="margin-top:20px;">
+        </div>
+        <div class="ContainerWhite">
+            <div class="AvatarSquare">avatar</div>
+            <button type="submit" class="btn btn-outline-success SaveButton">Save all</button>
+        </div>
+    </form>
+{% endblock %}

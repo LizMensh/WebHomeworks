@@ -1,0 +1,36 @@
+{% load static %}
+
+<div class="question">
+    <div class="row">
+        <div class="col-2">
+            <div class="avatar_question mx-auto">
+                <a href="#">
+                    <img src="{% static 'img/../../static/img/Avatar2.png' %}" alt=""/>
+                </a>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="question-text">{{ answer.text }}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <div class="text-center position-relative top-50 start-50 translate-middle">
+                <input type="checkbox" class="btn-check" id="{{ answer.id }}" autocomplete="off">
+                <label class="btn btn-outline-primary" for="{{ answer.id }}">{{ answer.like_number }}</label>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="text-start">
+                <div class="form-check form-check-inline">
+                    {% if answer.correct %}
+                        <input class="form-check-input" type="checkbox" id="{{ answer.id }}" value="option1" checked="">
+                    {% else %}
+                        <input class="form-check-input" type="checkbox" id="{{ answer.id }}" value="option1">
+                    {% endif %}
+                    <label class="form-check-label" for="{{ answer.id }}">Correct answer!</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

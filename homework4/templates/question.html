@@ -1,0 +1,57 @@
+{% extends "inc/base.html" %}
+
+{% load static %}
+
+{% block content %}
+    <div class="border-bottom border-3 border-secondary" style="padding-bottom: 20px">
+        <div class="row">
+            <div class="col-2">
+                <div class="avatar_question mx-auto">
+                    <a href="#">
+                        <img src="{% static 'img/../../static/img/Avatar3.png' %}" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="col-10">
+                <a class="question-title" href="{% url 'question' question_id=question.id %}">{{ question.title }}</a>
+                <div class="question-text">
+                    {{ question.text }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <div class="text-center position-relative top-50 start-50 translate-middle">
+                    <input type="checkbox" class="btn-check" id="btn-check-outlined1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btn-check-outlined1">{{ question.like_number }}</label>
+                </div>
+            </div>
+            <div class="col-10">
+                <div class="question_tag">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <h5 style="margin-top:10px;">Tag:</h5>
+                            {% for tag in question.tags %}
+                                <li class="nav-item popular-tag">
+                                    <a class="nav-link " href="{% url 'tag_question' tag_name=tag %}">{{ tag }}</a>
+                                </li>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-bottom border-3 border-secondary">
+        {% for answer in answers %}
+            {% include 'inc/answer_item.html' %}
+        {% endfor %}
+    </div>
+    <form action="{% url 'question' question_id=question.id %}" method="post">
+        <div class="container" style="padding-top: 20px">
+            <textarea name="answer" class="form-control" id="exampleFormControlTextarea2" rows="6"
+                    placeholder="Enter your answer here..."></textarea>
+            <button type="submit" class="btn btn-outline-success" style="margin-top: 10px; margin-bottom: 10px">Respond!</button>
+        </div>
+    </form>
+{% endblock %}
